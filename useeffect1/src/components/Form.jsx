@@ -8,17 +8,26 @@ export const Form = () => {
 
     useEffect(() => {
         console.log("First Effect");
+        return () => {
+            console.log("clear1");
+        }
     })
 
     useEffect(() => {
         //  Updating
         console.log("Second Effect");
         // only once!
+        return () => {
+            console.log("clear2");
+        }
     }, []);
 
     useEffect(() => {
         //  Updating
         console.log("Third Effect");
+        return () => {
+            console.log("clear3");
+        }
     }, [counter, age]);
 
     console.log("After use Effect");
